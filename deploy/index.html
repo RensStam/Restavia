@@ -1923,7 +1923,7 @@ canvas {
         <button class="stage-back" id="immersiveBack" type="button" aria-label="Terug">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
         </button>
-        <span style="position:absolute;bottom:8px;right:12px;font-size:0.65em;opacity:0.35;pointer-events:none;z-index:2">v4.5.5</span>
+        <span style="position:absolute;bottom:8px;right:12px;font-size:0.65em;opacity:0.35;pointer-events:none;z-index:2">v4.5.6</span>
         <div class="stage-logo">
           <img aria-hidden="true" alt="" src="restavia-logo.png?v=2" style="width:100%;height:100%;object-fit:contain">
         </div>
@@ -5729,6 +5729,9 @@ function friendlyAuthError(msg, context) {
   }
   if (m.includes("rate limit") || m.includes("too many")) {
     return "Te veel pogingen. Wacht even en probeer het opnieuw.";
+  }
+  if (m.includes("error sending") || m.includes("sending email") || m.includes("smtp")) {
+    return "We konden je de e-mail nu niet sturen. Probeer het later opnieuw of mail naar restavia@domeinstam.nl.";
   }
   return msg; // val terug op de oorspronkelijke tekst
 }
