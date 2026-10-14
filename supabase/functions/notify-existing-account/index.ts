@@ -60,11 +60,15 @@ Deno.serve(async (req) => {
 });
 
 async function sendExistingAccountMail(email: string) {
+  // Poort 465 = direct versleuteld (TLS); poort 587 = STARTTLS (bv. Hostnet:
+  // smtp.hostnet.nl:587). Bij STARTTLS moet tls uit staan; denomailer
+  // schakelt dan zelf over op een versleutelde verbinding.
+  const port = Number(Deno.env.get("SMTP_PORT") || "587");
   const client = new SMTPClient({
     connection: {
       hostname: Deno.env.get("SMTP_HOST")!,
-      port: Number(Deno.env.get("SMTP_PORT") || "587"),
-      tls: true,
+      port,
+      tls: port === 465,
       auth: {
         username: Deno.env.get("SMTP_USER")!,
         password: Deno.env.get("SMTP_PASS")!,
