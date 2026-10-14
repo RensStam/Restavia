@@ -1,104 +1,44 @@
 # Restavia — e-mailtemplates voor Supabase Auth
 
-Plakken in: **Supabase → Authentication → Emails → Templates**.
-Per template: vul het **Subject** in en vervang de **Message body** door de HTML hieronder (tabblad "Source"). Daarna **Save**.
+Plakken in: **Supabase → Authentication → Emails → Templates**. Per template: **Subject** invullen, **Body** (Source) vervangen door de HTML, **Save**.
+De opmaak gebruikt tabellen, zodat de knop ook in Outlook als blauwe knop verschijnt.
 
 ---
 
-## 1. Confirm signup (bevestigen registratie)
+## 1. Confirm signup
 
 **Subject:** `Bevestig je e-mailadres voor Restavia`
 
 ```html
-<div style="background:#FAFAF7;padding:32px 16px;font-family:Arial,Helvetica,sans-serif;color:#243E4A">
-  <div style="max-width:480px;margin:0 auto;background:#FFFFFF;border-radius:16px;padding:32px 28px;border:1px solid #E6F3F7">
-    <div style="text-align:center;margin-bottom:20px">
-      <img src="https://restavia.web.app/restavia-logo.png" alt="Restavia" width="120" style="width:120px;height:auto">
-      <div style="font-family:Georgia,serif;font-size:28px;color:#31566F;margin-top:6px">Restavia</div>
-      <div style="font-size:11px;letter-spacing:3px;color:#4F7EAB;margin-top:4px">BREATHE. FEEL. FLOW.</div>
-    </div>
-    <h1 style="font-size:20px;color:#31566F;margin:0 0 12px">Welkom bij Restavia</h1>
-    <p style="font-size:15px;line-height:1.6;margin:0 0 20px">Fijn dat je er bent. Bevestig je e-mailadres om je account te activeren. Daarna kun je inloggen en worden je sessies en voortgang bewaard.</p>
-    <p style="text-align:center;margin:0 0 24px">
-      <a href="{{ .ConfirmationURL }}" style="display:inline-block;background:#31566F;color:#FFFFFF;text-decoration:none;font-weight:bold;font-size:15px;padding:13px 28px;border-radius:999px">E-mailadres bevestigen</a>
-    </p>
-    <p style="font-size:13px;line-height:1.5;color:#5F7482;margin:0">Heb je geen account aangemaakt bij Restavia? Dan kun je deze e-mail negeren.</p>
-  </div>
-  <p style="text-align:center;font-size:12px;color:#5F7482;margin:16px 0 0">Restavia — een initiatief van Domein Stam · restavia@domeinstam.nl</p>
-</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FAFAF7" style="background:#FAFAF7"><tr><td align="center" style="padding:32px 16px"><table role="presentation" width="480" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="width:100%;max-width:480px;background:#FFFFFF;border:1px solid #E6F3F7;border-radius:16px"><tr><td style="padding:32px 28px;font-family:Arial,Helvetica,sans-serif;color:#243E4A"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="padding-bottom:20px"><img src="https://restavia.web.app/restavia-logo.png" alt="Restavia" width="120" style="display:block;width:120px;height:auto;border:0;margin:0 auto"><div style="font-family:Georgia,serif;font-size:28px;color:#31566F;margin-top:6px">Restavia</div><div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;letter-spacing:3px;color:#4F7EAB;margin-top:4px">BREATHE. FEEL. FLOW.</div></td></tr></table><h1 style="font-family:Arial,Helvetica,sans-serif;font-size:20px;color:#31566F;margin:0 0 12px">Welkom bij Restavia</h1><p style="font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.6;color:#243E4A;margin:0 0 24px">Fijn dat je er bent. Bevestig je e-mailadres om je account te activeren. Daarna kun je inloggen en worden je sessies en voortgang bewaard.</p><table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:0 auto 24px"><tr><td align="center" bgcolor="#31566F" style="background:#31566F;border-radius:999px;padding:13px 28px"><a href="{{ .ConfirmationURL }}" style="font-family:Arial,Helvetica,sans-serif;font-size:15px;font-weight:bold;color:#FFFFFF;text-decoration:none;display:inline-block">E-mailadres bevestigen</a></td></tr></table><p style="font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:1.5;color:#5F7482;margin:0">Heb je geen account aangemaakt bij Restavia? Dan kun je deze e-mail negeren.</p></td></tr></table><p style="font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#5F7482;margin:16px 0 0;text-align:center">Restavia — een initiatief van Domein Stam · restavia@domeinstam.nl</p></td></tr></table>
 ```
 
 ---
 
-## 2. Reset password (wachtwoord vergeten)
+## 2. Reset password
 
 **Subject:** `Stel een nieuw wachtwoord in voor Restavia`
 
 ```html
-<div style="background:#FAFAF7;padding:32px 16px;font-family:Arial,Helvetica,sans-serif;color:#243E4A">
-  <div style="max-width:480px;margin:0 auto;background:#FFFFFF;border-radius:16px;padding:32px 28px;border:1px solid #E6F3F7">
-    <div style="text-align:center;margin-bottom:20px">
-      <img src="https://restavia.web.app/restavia-logo.png" alt="Restavia" width="120" style="width:120px;height:auto">
-      <div style="font-family:Georgia,serif;font-size:28px;color:#31566F;margin-top:6px">Restavia</div>
-      <div style="font-size:11px;letter-spacing:3px;color:#4F7EAB;margin-top:4px">BREATHE. FEEL. FLOW.</div>
-    </div>
-    <h1 style="font-size:20px;color:#31566F;margin:0 0 12px">Nieuw wachtwoord instellen</h1>
-    <p style="font-size:15px;line-height:1.6;margin:0 0 20px">We kregen een verzoek om het wachtwoord van je Restavia-account opnieuw in te stellen. Klik op de knop om een nieuw wachtwoord te kiezen.</p>
-    <p style="text-align:center;margin:0 0 24px">
-      <a href="{{ .ConfirmationURL }}" style="display:inline-block;background:#31566F;color:#FFFFFF;text-decoration:none;font-weight:bold;font-size:15px;padding:13px 28px;border-radius:999px">Nieuw wachtwoord kiezen</a>
-    </p>
-    <p style="font-size:13px;line-height:1.5;color:#5F7482;margin:0">Heb je dit niet aangevraagd? Dan kun je deze e-mail negeren; je wachtwoord blijft ongewijzigd.</p>
-  </div>
-  <p style="text-align:center;font-size:12px;color:#5F7482;margin:16px 0 0">Restavia — een initiatief van Domein Stam · restavia@domeinstam.nl</p>
-</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FAFAF7" style="background:#FAFAF7"><tr><td align="center" style="padding:32px 16px"><table role="presentation" width="480" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="width:100%;max-width:480px;background:#FFFFFF;border:1px solid #E6F3F7;border-radius:16px"><tr><td style="padding:32px 28px;font-family:Arial,Helvetica,sans-serif;color:#243E4A"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="padding-bottom:20px"><img src="https://restavia.web.app/restavia-logo.png" alt="Restavia" width="120" style="display:block;width:120px;height:auto;border:0;margin:0 auto"><div style="font-family:Georgia,serif;font-size:28px;color:#31566F;margin-top:6px">Restavia</div><div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;letter-spacing:3px;color:#4F7EAB;margin-top:4px">BREATHE. FEEL. FLOW.</div></td></tr></table><h1 style="font-family:Arial,Helvetica,sans-serif;font-size:20px;color:#31566F;margin:0 0 12px">Nieuw wachtwoord instellen</h1><p style="font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.6;color:#243E4A;margin:0 0 24px">We kregen een verzoek om het wachtwoord van je Restavia-account opnieuw in te stellen. Klik op de knop om een nieuw wachtwoord te kiezen.</p><table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:0 auto 24px"><tr><td align="center" bgcolor="#31566F" style="background:#31566F;border-radius:999px;padding:13px 28px"><a href="{{ .ConfirmationURL }}" style="font-family:Arial,Helvetica,sans-serif;font-size:15px;font-weight:bold;color:#FFFFFF;text-decoration:none;display:inline-block">Nieuw wachtwoord kiezen</a></td></tr></table><p style="font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:1.5;color:#5F7482;margin:0">Heb je dit niet aangevraagd? Dan kun je deze e-mail negeren; je wachtwoord blijft ongewijzigd.</p></td></tr></table><p style="font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#5F7482;margin:16px 0 0;text-align:center">Restavia — een initiatief van Domein Stam · restavia@domeinstam.nl</p></td></tr></table>
 ```
 
 ---
 
-## 3. Change email address (e-mailadres wijzigen)
+## 3. Change email address
 
 **Subject:** `Bevestig je nieuwe e-mailadres voor Restavia`
 
 ```html
-<div style="background:#FAFAF7;padding:32px 16px;font-family:Arial,Helvetica,sans-serif;color:#243E4A">
-  <div style="max-width:480px;margin:0 auto;background:#FFFFFF;border-radius:16px;padding:32px 28px;border:1px solid #E6F3F7">
-    <div style="text-align:center;margin-bottom:20px">
-      <img src="https://restavia.web.app/restavia-logo.png" alt="Restavia" width="120" style="width:120px;height:auto">
-      <div style="font-family:Georgia,serif;font-size:28px;color:#31566F;margin-top:6px">Restavia</div>
-      <div style="font-size:11px;letter-spacing:3px;color:#4F7EAB;margin-top:4px">BREATHE. FEEL. FLOW.</div>
-    </div>
-    <h1 style="font-size:20px;color:#31566F;margin:0 0 12px">Nieuw e-mailadres bevestigen</h1>
-    <p style="font-size:15px;line-height:1.6;margin:0 0 20px">Je wilt het e-mailadres van je Restavia-account wijzigen van {{ .Email }} naar {{ .NewEmail }}. Bevestig dit met de knop hieronder.</p>
-    <p style="text-align:center;margin:0 0 24px">
-      <a href="{{ .ConfirmationURL }}" style="display:inline-block;background:#31566F;color:#FFFFFF;text-decoration:none;font-weight:bold;font-size:15px;padding:13px 28px;border-radius:999px">Wijziging bevestigen</a>
-    </p>
-    <p style="font-size:13px;line-height:1.5;color:#5F7482;margin:0">Heb je dit niet aangevraagd? Dan kun je deze e-mail negeren.</p>
-  </div>
-  <p style="text-align:center;font-size:12px;color:#5F7482;margin:16px 0 0">Restavia — een initiatief van Domein Stam · restavia@domeinstam.nl</p>
-</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FAFAF7" style="background:#FAFAF7"><tr><td align="center" style="padding:32px 16px"><table role="presentation" width="480" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="width:100%;max-width:480px;background:#FFFFFF;border:1px solid #E6F3F7;border-radius:16px"><tr><td style="padding:32px 28px;font-family:Arial,Helvetica,sans-serif;color:#243E4A"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="padding-bottom:20px"><img src="https://restavia.web.app/restavia-logo.png" alt="Restavia" width="120" style="display:block;width:120px;height:auto;border:0;margin:0 auto"><div style="font-family:Georgia,serif;font-size:28px;color:#31566F;margin-top:6px">Restavia</div><div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;letter-spacing:3px;color:#4F7EAB;margin-top:4px">BREATHE. FEEL. FLOW.</div></td></tr></table><h1 style="font-family:Arial,Helvetica,sans-serif;font-size:20px;color:#31566F;margin:0 0 12px">Nieuw e-mailadres bevestigen</h1><p style="font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.6;color:#243E4A;margin:0 0 24px">Je wilt het e-mailadres van je Restavia-account wijzigen van {{ .Email }} naar {{ .NewEmail }}. Bevestig dit met de knop hieronder.</p><table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:0 auto 24px"><tr><td align="center" bgcolor="#31566F" style="background:#31566F;border-radius:999px;padding:13px 28px"><a href="{{ .ConfirmationURL }}" style="font-family:Arial,Helvetica,sans-serif;font-size:15px;font-weight:bold;color:#FFFFFF;text-decoration:none;display:inline-block">Wijziging bevestigen</a></td></tr></table><p style="font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:1.5;color:#5F7482;margin:0">Heb je dit niet aangevraagd? Dan kun je deze e-mail negeren.</p></td></tr></table><p style="font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#5F7482;margin:16px 0 0;text-align:center">Restavia — een initiatief van Domein Stam · restavia@domeinstam.nl</p></td></tr></table>
 ```
 
 ---
 
-## 4. Magic link (inloggen via link)
+## 4. Magic link
 
 **Subject:** `Je inloglink voor Restavia`
 
 ```html
-<div style="background:#FAFAF7;padding:32px 16px;font-family:Arial,Helvetica,sans-serif;color:#243E4A">
-  <div style="max-width:480px;margin:0 auto;background:#FFFFFF;border-radius:16px;padding:32px 28px;border:1px solid #E6F3F7">
-    <div style="text-align:center;margin-bottom:20px">
-      <img src="https://restavia.web.app/restavia-logo.png" alt="Restavia" width="120" style="width:120px;height:auto">
-      <div style="font-family:Georgia,serif;font-size:28px;color:#31566F;margin-top:6px">Restavia</div>
-      <div style="font-size:11px;letter-spacing:3px;color:#4F7EAB;margin-top:4px">BREATHE. FEEL. FLOW.</div>
-    </div>
-    <h1 style="font-size:20px;color:#31566F;margin:0 0 12px">Inloggen bij Restavia</h1>
-    <p style="font-size:15px;line-height:1.6;margin:0 0 20px">Klik op de knop om in te loggen. Deze link werkt één keer.</p>
-    <p style="text-align:center;margin:0 0 24px">
-      <a href="{{ .ConfirmationURL }}" style="display:inline-block;background:#31566F;color:#FFFFFF;text-decoration:none;font-weight:bold;font-size:15px;padding:13px 28px;border-radius:999px">Inloggen</a>
-    </p>
-    <p style="font-size:13px;line-height:1.5;color:#5F7482;margin:0">Heb je dit niet aangevraagd? Dan kun je deze e-mail negeren.</p>
-  </div>
-  <p style="text-align:center;font-size:12px;color:#5F7482;margin:16px 0 0">Restavia — een initiatief van Domein Stam · restavia@domeinstam.nl</p>
-</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FAFAF7" style="background:#FAFAF7"><tr><td align="center" style="padding:32px 16px"><table role="presentation" width="480" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="width:100%;max-width:480px;background:#FFFFFF;border:1px solid #E6F3F7;border-radius:16px"><tr><td style="padding:32px 28px;font-family:Arial,Helvetica,sans-serif;color:#243E4A"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="padding-bottom:20px"><img src="https://restavia.web.app/restavia-logo.png" alt="Restavia" width="120" style="display:block;width:120px;height:auto;border:0;margin:0 auto"><div style="font-family:Georgia,serif;font-size:28px;color:#31566F;margin-top:6px">Restavia</div><div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;letter-spacing:3px;color:#4F7EAB;margin-top:4px">BREATHE. FEEL. FLOW.</div></td></tr></table><h1 style="font-family:Arial,Helvetica,sans-serif;font-size:20px;color:#31566F;margin:0 0 12px">Inloggen bij Restavia</h1><p style="font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.6;color:#243E4A;margin:0 0 24px">Klik op de knop om in te loggen. Deze link werkt één keer.</p><table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:0 auto 24px"><tr><td align="center" bgcolor="#31566F" style="background:#31566F;border-radius:999px;padding:13px 28px"><a href="{{ .ConfirmationURL }}" style="font-family:Arial,Helvetica,sans-serif;font-size:15px;font-weight:bold;color:#FFFFFF;text-decoration:none;display:inline-block">Inloggen</a></td></tr></table><p style="font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:1.5;color:#5F7482;margin:0">Heb je dit niet aangevraagd? Dan kun je deze e-mail negeren.</p></td></tr></table><p style="font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#5F7482;margin:16px 0 0;text-align:center">Restavia — een initiatief van Domein Stam · restavia@domeinstam.nl</p></td></tr></table>
 ```
